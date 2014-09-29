@@ -1,0 +1,55 @@
+signals- ...terminate program ...receive notifcation from os
+signal numbers 1 to 31.
+signal as interrupt: signal handler-signal
+
+signal masks- manipulating signals and managing signal config
+	 -> default signal handler-SIGINT
+	 -> our own signal handler
+ signal masks are also used as arguments in system calls.
+ we can use 32 bit integer to keep information about 32 signals.
+
+SIGINT - ctrl + C(iterrupt). 
+default response for SIGINIT is to terminate programs.
+
+signals that report exceptions- 
+	for segmentation fault,    os -> SIGSEGV -> program.
+other uses: in debugger, IPC(Inter Process Communication mechanism),
+	    reinitialize program, kill(default SIGTERM).
+
+
+Types of signals:
+
+ SIGHUP: if user terminates terminal without killing program runnig on it,
+	 then OS sends SIGHUP to program to terminate it.
+ SIGINT: terminates program when user presses ctrl + C.
+SIGQUIT: quit from keyboard.
+ SIGILL: illigal istruction signal. os sends this exception signal when it
+	 encounters an illigal instruction in program or, currepted executable
+	 file.
+SIGABRT: used when program contains abort() API. abort() issues SIGABRT.
+ SIGFPE: floating point exception.
+SIGSEGV: os sends this exception signal when user tries to acces, memory
+	 location that does not belong to the program.
+SIGPIPE: broken pipe. os sends this signal when user tries to use a pipe with 
+	 no reader at the end.
+SIGALRM: alarm signal. uses alarm() system call.
+ SIGERM: it tells program to terminate itself. (something like shut down, as 
+	 SIGKILL is an abnormal termination).
+SIGCHLD: it indicates child process has been terminated.
+SIGUSR1 and SIGUSR2 are signals with no predefined meaning.
+
+
+SIGKILL and SIGSTOP are special signals. user cannot change how the program 
+handle these signals;
+kill -9 <pid> sends SIGKILL signal to process.
+SIGSTOP is used when debugging. breakpoint..
+
+registering own signal handler:
+signal() using signal we can change signal handler.
+SIG_IGN-signal ignore change that we did.
+SIG_DFL- which sets back to default signal handler.
+
+signal returns previous value of signal handler or SIG_ERR on signal error.
+the signals SIGKILL and SIGSTOP cannot be caught or ignored.
+
+

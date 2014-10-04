@@ -1,0 +1,90 @@
+188,189c188,189
+<  8048573:	83 ec 70             	sub    $0x70,%esp
+<  8048576:	c7 44 24 24 00 00 00 	movl   $0x0,0x24(%esp)
+---
+>  8048573:	83 ec 60             	sub    $0x60,%esp
+>  8048576:	c7 44 24 14 00 00 00 	movl   $0x0,0x14(%esp)
+191c191
+<  804857e:	c7 44 24 1c 00 00 00 	movl   $0x0,0x1c(%esp)
+---
+>  804857e:	c7 44 24 10 00 00 00 	movl   $0x0,0x10(%esp)
+194,195c194,195
+<  804858b:	89 44 24 28          	mov    %eax,0x28(%esp)
+<  804858f:	83 7c 24 28 00       	cmpl   $0x0,0x28(%esp)
+---
+>  804858b:	89 44 24 18          	mov    %eax,0x18(%esp)
+>  804858f:	83 7c 24 18 00       	cmpl   $0x0,0x18(%esp)
+213,214c213,214
+<  80485e2:	e9 24 01 00 00       	jmp    804870b <main+0x19e>
+<  80485e7:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+---
+>  80485e2:	e9 1c 01 00 00       	jmp    8048703 <main+0x196>
+>  80485e7:	8d 44 24 10          	lea    0x10(%esp),%eax
+229c229
+<  804862b:	8b 44 24 28          	mov    0x28(%esp),%eax
+---
+>  804862b:	8b 44 24 18          	mov    0x18(%esp),%eax
+232c232
+<  8048637:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+---
+>  8048637:	8d 44 24 10          	lea    0x10(%esp),%eax
+235c235
+<  8048643:	8d 44 24 2c          	lea    0x2c(%esp),%eax
+---
+>  8048643:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+239c239
+<  8048653:	8b 44 24 28          	mov    0x28(%esp),%eax
+---
+>  8048653:	8b 44 24 18          	mov    0x18(%esp),%eax
+243c243
+<  8048667:	8b 44 24 2c          	mov    0x2c(%esp),%eax
+---
+>  8048667:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+247c247
+<  804867b:	c7 44 24 2c f5 00 00 	movl   $0xf5,0x2c(%esp)
+---
+>  804867b:	c7 44 24 1c f5 00 00 	movl   $0xf5,0x1c(%esp)
+249c249
+<  8048683:	8d 44 24 2c          	lea    0x2c(%esp),%eax
+---
+>  8048683:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+253c253
+<  8048693:	8b 44 24 28          	mov    0x28(%esp),%eax
+---
+>  8048693:	8b 44 24 18          	mov    0x18(%esp),%eax
+265c265
+<  80486cb:	8d 44 24 1c          	lea    0x1c(%esp),%eax
+---
+>  80486cb:	8d 44 24 10          	lea    0x10(%esp),%eax
+268,281c268,283
+<  80486d7:	8b 44 24 1c          	mov    0x1c(%esp),%eax
+<  80486db:	89 44 24 20          	mov    %eax,0x20(%esp)
+<  80486df:	8b 44 24 20          	mov    0x20(%esp),%eax
+<  80486e3:	0f b6 c0             	movzbl %al,%eax
+<  80486e6:	83 f8 7f             	cmp    $0x7f,%eax
+<  80486e9:	0f 94 c0             	sete   %al
+<  80486ec:	0f b6 c0             	movzbl %al,%eax
+<  80486ef:	89 44 24 04          	mov    %eax,0x4(%esp)
+<  80486f3:	c7 04 24 f7 87 04 08 	movl   $0x80487f7,(%esp)
+<  80486fa:	e8 d1 fc ff ff       	call   80483d0 <printf@plt>
+<  80486ff:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
+<  8048706:	e8 d5 fc ff ff       	call   80483e0 <sleep@plt>
+<  804870b:	c9                   	leave  
+<  804870c:	c3                   	ret    
+---
+>  80486d7:	8b 44 24 10          	mov    0x10(%esp),%eax
+>  80486db:	0f b6 c0             	movzbl %al,%eax
+>  80486de:	83 f8 7f             	cmp    $0x7f,%eax
+>  80486e1:	0f 94 c0             	sete   %al
+>  80486e4:	0f b6 c0             	movzbl %al,%eax
+>  80486e7:	89 44 24 04          	mov    %eax,0x4(%esp)
+>  80486eb:	c7 04 24 f7 87 04 08 	movl   $0x80487f7,(%esp)
+>  80486f2:	e8 d9 fc ff ff       	call   80483d0 <printf@plt>
+>  80486f7:	c7 04 24 64 00 00 00 	movl   $0x64,(%esp)
+>  80486fe:	e8 dd fc ff ff       	call   80483e0 <sleep@plt>
+>  8048703:	c9                   	leave  
+>  8048704:	c3                   	ret    
+>  8048705:	66 90                	xchg   %ax,%ax
+>  8048707:	66 90                	xchg   %ax,%ax
+>  8048709:	66 90                	xchg   %ax,%ax
+>  804870b:	66 90                	xchg   %ax,%ax
